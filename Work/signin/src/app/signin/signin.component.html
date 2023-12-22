@@ -1,0 +1,30 @@
+<div class="text-center form">
+    <form [formGroup]="loginForm" (ngSubmit)="login()" class="mt-5 centerd-form">
+    
+      <h2 class="my-3">Sign in</h2>
+
+    <mat-form-field class="example-full-width">
+      <mat-label>Username </mat-label>
+      <input matInput type="text" formControlName="user" [ngModel]="user">
+    </mat-form-field>
+    
+    <div *ngIf="userControl && userControl.invalid && userControl.touched" class="text-danger">
+      Valid username is required
+    </div>
+
+
+    <mat-form-field class="example-full-width">
+      <mat-label>Password </mat-label>
+      <input matInput type="password" formControlName="password" [ngModel]="passwordValue">
+    </mat-form-field>
+    
+    <div *ngIf="password && password.invalid && password.touched" class="text-danger">
+     Valid password is required
+    </div> 
+
+    <div class="text-center my-3">
+      <button type="submit" mat-raised-button [disabled]="loginForm.invalid" color="primary">Sign in</button>
+   
+    </div>
+  </form>
+</div>

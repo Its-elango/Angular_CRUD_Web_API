@@ -1,0 +1,34 @@
+<h3 class="text-center">Update Staff</h3>
+
+<div class="row justify-content-center">
+    <div class="col-md-4">
+        <div *ngIf="successMessage" class="text-center text-success">Staff updated successfully.</div>
+
+        <form #f="ngForm" (ngSubmit)="updateEmployee(f)" novalidate>
+            <div class="form-group" id="hidden">
+                <label for="Name" class="control-label">ID</label>
+                <input type="text" id="id" name="id" class="form-control" [(ngModel)]="id" readonly/>
+            </div>
+
+            <div class="form-group">
+                <label for="Name" class="control-label">Name</label>
+                <input type="text" id="name" name="name" class="form-control" [(ngModel)]="name"/>
+            </div>
+
+            <div class="form-group">
+                <label for="Designation" class="control-label">Designation</label>
+                <input type="text" id="designation" name="designation" class="form-control"  [(ngModel)]="designation"/>         
+            </div>
+
+            <div class="form-group">
+                <label for="Age" class="control-label">Age</label>
+                <input type="text" id="age" name="age" class="form-control" [(ngModel)]="age"/>
+            </div>
+
+            <div class="form-group my-3 text-center">
+                <input type="submit" value="Update" class="btn btn-outline-success mx-3" />
+                <a (click)="navigateToAllEmployee()" class="btn btn-outline-primary">Back to List</a>
+            </div>
+        </form>
+    </div>
+</div>
